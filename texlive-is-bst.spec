@@ -1,6 +1,6 @@
 Name:		texlive-is-bst
 Version:	52623
-Release:	1
+Release:	2
 Summary:	Extended versions of standard BibTeX styles
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/is-bst

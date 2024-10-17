@@ -3,7 +3,7 @@ Version:	52623
 Release:	2
 Summary:	Extended versions of standard BibTeX styles
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/is-bst
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/is-bst
 License:	other-free
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/is-bst.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/is-bst.doc.r%{version}.tar.xz

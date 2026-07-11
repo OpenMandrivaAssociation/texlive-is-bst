@@ -1,40 +1,24 @@
-Name:		texlive-is-bst
-Version:	52623
-Release:	2
+%global tl_name is-bst
+%global tl_revision 76790
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.03
+Release:	%{tl_revision}.1
 Summary:	Extended versions of standard BibTeX styles
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/is-bst
+URL:		https://www.ctan.org/tex-archive/biblio/bibtex/contrib/is-bst
 License:	other-free
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/is-bst.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/is-bst.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/is-bst.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/is-bst.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The bundle contains an extended version (xbtxbst.doc) of the
-source of the standard BibTeX styles, together with
-corresponding versions of the standard styles. The styles offer
-support for CODEN, ISBN, ISSN, LCCN, and PRICE fields, extended
-PAGES fields, the PERIODICAL entry, and extended citation label
-suffixing.
+The bundle contains an extended version (xbtxbst.doc) of the source of
+the standard BibTeX styles, together with corresponding versions of the
+standard styles. The styles offer support for CODEN, ISBN, ISSN, LCCN,
+and PRICE fields, extended PAGES fields, the PERIODICAL entry, and
+extended citation label suffixing.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/bibtex/bst/is-bst
-%doc %{_texmfdistdir}/doc/bibtex/is-bst
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
